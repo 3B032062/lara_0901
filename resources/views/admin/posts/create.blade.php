@@ -15,12 +15,12 @@
             </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <form action="/admin/posts" method="POST" role="form">
+        <form action="{{route('admin/admin/posts')}}" method="POST" role="form">
             @method('POST')
             @csrf
             <div class="form-group">
                 <label for="title" class="form-label">標題：</label>
-                <input id="title" class="form-control" value="{{old('title')}}" placeholder="請輸入文章標題">
+                <input id="title" name="title" class="form-control" value="{{old('title')}}" placeholder="請輸入文章標題">
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label">內容</label>

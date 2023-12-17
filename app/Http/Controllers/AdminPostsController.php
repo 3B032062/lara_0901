@@ -28,12 +28,16 @@ class AdminPostsController extends Controller
 
     public function edit($id)
     {
-        return view('admin.posts.edit');
+        $data=[
+            'post'=>$post,
+        ];
+        return view('admin.posts.edit',$data);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        return redirect()->route('admin.posts.index');
     }
 
     public function destroy($id)
