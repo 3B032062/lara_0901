@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 class AdminPostsController extends Controller
 {
+    use App\Models\Post;
     public function index()
     {
-        return view('admin.posts.index');
+        $posts = Post::orderBy('create_at','DESC')->get();
+        $data = ['posts' => $posts];
+        return view('admin.posts.index',$data);
     }
 
     public function create()
