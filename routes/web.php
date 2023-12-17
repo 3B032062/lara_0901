@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('posts', [AdminPostsController::class, 'store'])->name('posts.store');
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('posts', [PostsController::class, 'index'])->name('posts.index');
 Route::get('posts/{post}', [PostsController::class, 'show'])->name('posts.show');

@@ -25,7 +25,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach(range(1, 10) as $id)
+        @foreach($posts as $post)
             <tr>
                 <td style="text-align: right">{{$post->id}}</td>
                 <td>{{ $post->title }}</td>
